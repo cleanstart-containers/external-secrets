@@ -4,7 +4,7 @@
 
 **📌 CleanStart Foundation:** Security-hardened, minimal base OS designed for enterprise containerized environments.
 
-**Image Path:** `cleanstart/external-secrets`
+**Image Path:** `ghcr.io/cleanstart-containers/external-secrets`
 
 **Registry:** CleanStart Registry
 
@@ -34,7 +34,7 @@ This CleanStart container provides the External Secrets Operator binary for mana
 
 ## 🖼️ Image Details
 
-**Image:** `cleanstart/external-secrets:latest-dev`
+**Image:** `ghcr.io/cleanstart-containers/external-secrets:latest-dev`
 
 **Key Features:**
 - **User:** `clnstrt` (non-root)
@@ -88,27 +88,27 @@ The External Secrets Operator supports many secret backends:
 
 ### Pull Commands
 ```bash
-docker pull cleanstart/external-secrets:latest
-docker pull cleanstart/external-secrets:latest-dev
+docker pull ghcr.io/cleanstart-containers/external-secrets:latest
+docker pull ghcr.io/cleanstart-containers/external-secrets:latest-dev
 ```
 
 ### Test the Image
 ```bash
 # Show help
-docker run --rm cleanstart/external-secrets:latest-dev --help
+docker run --rm ghcr.io/cleanstart-containers/external-secrets:latest-dev --help
 
 # Certificate controller help
-docker run --rm cleanstart/external-secrets:latest-dev certcontroller --help
+docker run --rm ghcr.io/cleanstart-containers/external-secrets:latest-dev certcontroller --help
 
 # Webhook help
-docker run --rm cleanstart/external-secrets:latest-dev webhook --help
+docker run --rm ghcr.io/cleanstart-containers/external-secrets:latest-dev webhook --help
 ```
 
 ### Run Commands
 
 Basic test:
 ```bash
-docker run -it --name external-secrets-test cleanstart/external-secrets:latest-dev
+docker run -it --name external-secrets-test ghcr.io/cleanstart-containers/external-secrets:latest-dev
 ```
 
 Production deployment:
@@ -117,7 +117,7 @@ docker run -d --name external-secrets-prod \
   --read-only \
   --security-opt=no-new-privileges \
   --user 1000:1000 \
-  cleanstart/external-secrets:latest
+  ghcr.io/cleanstart-containers/external-secrets:latest
 ```
 
 ---
@@ -143,8 +143,8 @@ CleanStart images support multiple architectures to ensure compatibility across 
 
 ### Architecture-based Pull Commands
 ```bash
-docker pull --platform linux/amd64 cleanstart/external-secrets:latest
-docker pull --platform linux/arm64 cleanstart/external-secrets:latest
+docker pull --platform linux/amd64 ghcr.io/cleanstart-containers/external-secrets:latest
+docker pull --platform linux/arm64 ghcr.io/cleanstart-containers/external-secrets:latest
 ```
 
 ---
