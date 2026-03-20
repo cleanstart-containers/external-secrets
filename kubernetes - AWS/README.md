@@ -51,6 +51,16 @@ external-secrets-xxxxxxxxxx-xxxxx   0/1     Error    1-2        30s
 **⚠️ Note:** The pod will show `Error` status because the operator requires CRDs (CustomResourceDefinitions) to run. This is **expected and normal** for basic testing.
 
 ### Step 4: Check Pod Logs
+Install CRDs
+```bash
+kubectl apply -f https://raw.githubusercontent.com/external-secrets/external-secrets/main/deploy/crds/bundle.yaml
+```
+
+Restart pod
+```bash
+kubectl delete pod < podname > -n external-secrets-test && kubectl get pods -n external-secrets-test
+```
+
 View the operator logs:
 ```bash
 kubectl logs -n external-secrets-test -l app=external-secrets
@@ -65,7 +75,7 @@ kubectl logs -n external-secrets-test -l app=external-secrets
 - ✅ The pod started successfully
 - ✅ The image is working correctly
 - ✅ The operator binary executed properly
-- ℹ️ The operator exits because CRDs are not installed (expected behavior)
+- ℹ️ The operator exits when CRDs are not installed (expected behavior)
 
 ### Step 5: Verify Service
 Check the service:
